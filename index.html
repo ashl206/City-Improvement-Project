@@ -5,29 +5,71 @@
     <meta name ="viewport" content = "width = device-width, initial-scale = 1.0">
     <title>Leaflet Map for App</title>
 
+    <!-- leaflet styles -->
     <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.css"
         integrity="sha256-P+hWJNlpL+GBSRYC7cdsDbQH91URmpDeOzLp7DbFRtE="
         crossorigin="">
 
+    <!-- site style -->
     <link rel="stylesheet" href = "style.css">
+
+    <!-- leaflet map import -->
     <script type="importmap">
-    {
-        "imports": {
-            "leaflet": "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.js"
+        {
+            "imports": {
+                "leaflet": "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.js"
 
-        },
-        "integrity": {
-            "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.js": "sha256-gj5JhNAaMi6LCs+jVFOk8sXDe1sWSS2Zlc87m+trLiQ="
+            },
+            "integrity": {
+                "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.js": "sha256-gj5JhNAaMi6LCs+jVFOk8sXDe1sWSS2Zlc87m+trLiQ="
+            }
+
         }
-
-    }
-</script>
+    </script>
 
 </head>
+
+
 <body>
+    <!-- app header -->
+     <header class="app-header">
+            <a class="app-logo" href="#" aria-label="City Improvement home">
+                City Improvement App
+            </a>
 
-    <div id="map"></div>
+            <button class="profile-button" aria-label="Profile" type="button">
+                Profile
+            </button>
+     </header>
 
+     <main class="main-content">
+        <section class="welcome-section">
+            <p class="eyebrow">Welcome to City Improvement App</p>
+
+            <h1>Let's Improve Your City</h1>
+
+            <p class="intro-text">
+                Explore your surroundings and discover ways to make your community safer and more accessible.
+            </p>
+        </section>
+
+        <section class="map-section" aria-labelledby="map-heading">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Explore Your City</p>
+                    <h2 id="map-heading">Map of Your City</h2>
+                </div>
+            </div>
+
+                <div id="map" aria-label="Interactive map of your city"></div>
+
+                <p class="map-caption">
+                    Explore the map to get started.
+                </p>
+        </section>
+     </main>
+
+    <!-- js -->
     <script type="module" src="script.js"></script>
 </body>
 </html>
