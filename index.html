@@ -3,7 +3,7 @@
 <head>
     <meta charset = "UTF-8">
     <meta name ="viewport" content = "width = device-width, initial-scale = 1.0">
-    <title>Leaflet Map for App</title>
+    <title>City Improvement App</title>
 
     <!-- leaflet styles -->
     <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.css"
@@ -31,43 +31,82 @@
 
 
 <body>
-    <!-- app header -->
+    <!-- app header & nav -->
      <header class="app-header">
-            <a class="app-logo" href="#" aria-label="City Improvement home">
+            <a class="app-logo" href="index.html" aria-label="City Improvement home">
                 City Improvement App
             </a>
 
-            <button class="profile-button" aria-label="Profile" type="button">
-                Profile
-            </button>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a class="nav-active-link" href="index.html">Explore</a>
+            <a href="contact.html">Contact</a>
+            <a href="profile.html">
+                <img src="assets/images/user-circle-svgrepo-com.svg" alt="User profile icon" class="profile-button">
+            </a>
+        </nav>
+
      </header>
 
+     <!-- main home content -->
      <main class="main-content">
+
+        <!-- welcome/search bar stuff -->
         <section class="welcome-section">
-            <p class="eyebrow">Welcome to City Improvement App</p>
 
-            <h1>Let's Improve Your City</h1>
-
-            <p class="intro-text">
-                Explore your surroundings and discover ways to make your community safer and more accessible.
-            </p>
-        </section>
-
-        <section class="map-section" aria-labelledby="map-heading">
-            <div class="section-heading">
-                <div>
-                    <p class="eyebrow">Explore Your City</p>
-                    <h2 id="map-heading">Map of Your City</h2>
-                </div>
+            <div class="search-heading">
+                <h2 id="search-heading">
+                    Select a route to begin
+                </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.</p>
             </div>
 
+            <!-- search bar PLACEHOLDER -->
+             <form class="route-form" id="route-form">
+                <div class="form-field">
+                    <label for="start-location">Starting point</label>
+                    <input
+                        type="text"
+                        id="start-location"
+                        name="start-location"
+                        placeholder="Enter starting location"
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="end-location">Destination</label>
+                    <input
+                        type="text"
+                        id="end-location"
+                        name="end-location"
+                        placeholder="Enter destination"
+            >
+                </div>
+
+                <button class="analyze-button" type="submit">
+                    Analyze Route
+                </button>
+
+            </form>
+        </section>
+
+        <!-- home - map -->
+        <section class="map-section" aria-labelledby="map-heading">
                 <div id="map" aria-label="Interactive map of your city"></div>
 
-                <p class="map-caption">
-                    Explore the map to get started.
-                </p>
+            <aside class="route-overview">
+                    <h2>Route overview</h2>
+
+                    <div class="empty-state">
+                        <h3>Ready to explore?</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.</p>
+                    </div>
+            </aside>
         </section>
      </main>
+
+     <footer>
+        <p>&copy; 2026 Girls Who Code @ UCF - City Improvement Project. All rights reserved.</p>
+     </footer>
 
     <!-- js -->
     <script type="module" src="script.js"></script>
