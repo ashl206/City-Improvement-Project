@@ -24,14 +24,15 @@ var polygon = new Polygon([
 ]).addTo(map);
 
 
+// Shadow anchor and shadow size not necessary for shadowUrl being null 
 var treeIcon = new Icon({
     iconUrl: 'tree_icon.png',
-    shadowUrl: 'tree_icon-shadow.png',
+    shadowUrl: null,
 
     iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
+    // shadowSize:   [50, 64], // size of the shadow
     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
+    // shadowAnchor: [4, 62],  // the same for the shadow
     popupAnchor:  [-3, -76]
 
 })
