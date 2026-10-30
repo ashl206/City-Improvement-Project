@@ -29,7 +29,7 @@ var treeIcon = new Icon({
     iconUrl: 'tree_icon.png',
     shadowUrl: null,
 
-    iconSize:     [38, 95], // size of the icon
+    iconSize:     [88, 95], // size of the icon
     // shadowSize:   [50, 64], // size of the shadow
     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
     // shadowAnchor: [4, 62],  // the same for the shadow
@@ -39,4 +39,30 @@ var treeIcon = new Icon({
 
 var treeMarker = new Marker([51.52, -0.10], {
     icon: treeIcon
+}).addTo(map);
+
+var flowerIcon = new Icon({
+    iconUrl: 'flower_icon.jpg',
+    shadowUrl: null,
+
+    iconSize: [78, 95],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76]
+})
+
+var flowerMarker = new Marker([51.515, -0.08], {
+    icon: flowerIcon
+}).addTo(map);
+
+var raisedMedianIcon = new Icon({
+    iconUrl: 'median_icon.webp',
+    shadowUrl: null, 
+
+    iconSize: [88, 95],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76]
+})
+
+var raisedMedianIconMarker = new Marker([51.525, -0.11], {
+    icon: raisedMedianIcon
 }).addTo(map);
