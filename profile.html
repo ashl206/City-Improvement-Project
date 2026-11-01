@@ -2,30 +2,11 @@
 <html lang="en">
 <head>
     <meta charset = "UTF-8">
-    <meta name ="viewport" content = "width = device-width, initial-scale = 1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City Improvement App</title>
-
-    <!-- leaflet styles -->
-    <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.css"
-        integrity="sha256-P+hWJNlpL+GBSRYC7cdsDbQH91URmpDeOzLp7DbFRtE="
-        crossorigin="">
 
     <!-- site style -->
     <link rel="stylesheet" href = "style.css">
-
-    <!-- leaflet map import -->
-    <script type="importmap">
-        {
-            "imports": {
-                "leaflet": "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.js"
-
-            },
-            "integrity": {
-                "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.js": "sha256-gj5JhNAaMi6LCs+jVFOk8sXDe1sWSS2Zlc87m+trLiQ="
-            }
-
-        }
-    </script>
 
 </head>
 <body>
@@ -44,5 +25,228 @@
         </nav>
 
      </header>
+
+    <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+        <a href="index.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/></svg>
+            <span>Explore</span>
+        </a>
+        <a href="contact.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v12H9l-5 4z"/><path d="M8 9h8M8 13h5"/></svg>
+            <span>Contact</span>
+        </a>
+        <a class="is-current" href="profile.html" aria-current="page">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <!-- profile dashboard -->
+    <main class="profile-main">
+
+        <!-- profile sidebar -->
+        <aside class="profile-sidebar">
+
+            <div class="profile-user">
+                <div class="profile-avatar" aria-hidden="true">
+                    <span id="sidebar-initial">U</span>
+                </div>
+
+                <div class="profile-user-info">
+                    <h2 id="sidebar-name">User Name</h2>
+                    <p id="sidebar-email">email@example.com</p>
+                </div>
+            </div>
+
+
+            <!-- sidebar nav -->
+            <nav class="profile-menu" aria-label="Profile sections">
+
+                <button
+                    class="profile-menu-button active"
+                    type="button"
+                    data-section="saved"
+                    aria-current="page"
+                >
+                    <span aria-hidden="true">▣</span>
+                    Saved Routes
+                </button>
+
+                <button
+                    class="profile-menu-button"
+                    type="button"
+                    data-section="history"
+                >
+                    <span aria-hidden="true">◷</span>
+                    Analysis History
+                </button>
+
+                <button
+                    class="profile-menu-button"
+                    type="button"
+                    data-section="settings"
+                >
+                    <span aria-hidden="true">⚙</span>
+                    Settings
+                </button>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- main dashboard content -->
+        <div class="profile-content">
+
+            <!-- saved routes section -->
+            <section class="profile-section active" id="saved-section">
+
+                <div class="profile-section-heading">
+
+                    <div>
+                        <h1>Saved Routes</h1>
+                        <p>Keep track of routes you've saved for later</p>
+                    </div>
+
+                    <button
+                        class="save-route-button"
+                        type="button"
+                        id="show-save-form"
+                    >
+                        <span aria-hidden="true">+</span>
+                        Save New Route
+                    </button>
+
+                </div>
+
+
+                <!-- new route form -->
+                <form class="new-route-form" id="new-route-form" hidden>
+
+                    <h2>Save a new route</h2>
+
+                    <div class="new-route-fields">
+
+                        <div class="profile-field">
+                            <label for="new-route-title">Route Title</label>
+                            <input
+                                type="text"
+                                id="new-route-title"
+                                placeholder="e.g. Downtown Walk"
+                                required
+                            >
+                        </div>
+
+                        <div class="profile-field">
+                            <label for="new-route-address">Route Address</label>
+                            <input
+                                type="text"
+                                id="new-route-address"
+                                placeholder="e.g. Downtown Orlando"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="new-route-actions">
+                        <button class="save-route-button" type="submit">
+                            Save Route
+                        </button>
+
+                        <button
+                            class="cancel-route-button"
+                            type="button"
+                            id="cancel-save-form"
+                        >
+                            Cancel
+                        </button>
+                    </div>
+
+                </form>
+
+
+                <!-- saved routes list  -->
+                <div class="saved-routes-list" id="saved-routes-list">
+
+                </div>
+
+            </section>
+
+
+            <!-- analysis history section -->
+            <section class="profile-section" id="history-section" hidden>
+
+                <div class="profile-section-heading">
+                    <div>
+                        <h1>Analysis History</h1>
+                        <p>Review routes you've previously analyzed</p>
+                    </div>
+                </div>
+
+                <div class="profile-empty-state">
+                    <div class="profile-empty-icon">◷</div>
+                    <h2>No analysis history yet</h2>
+                    <p>
+                        Once you analyze a route, your previous analyses will appear here
+                    </p>
+                    <a href="index.html" class="profile-text-link">
+                        Explore your city →
+                    </a>
+                </div>
+
+            </section>
+
+
+            <!-- settings section -->
+            <section class="profile-section" id="settings-section" hidden>
+
+                <div class="profile-section-heading">
+                    <div>
+                        <h1>Settings</h1>
+                        <p>Manage your profile information.</p>
+                    </div>
+                </div>
+
+                <form class="settings-form" id="settings-form">
+
+                    <div class="profile-field">
+                        <label for="profile-name">Display Name</label>
+                        <input
+                            type="text"
+                            id="profile-name"
+                            placeholder="Enter your name"
+                        >
+                    </div>
+
+                    <div class="profile-field">
+                        <label for="profile-email">Email Address</label>
+                        <input
+                            type="email"
+                            id="profile-email"
+                            placeholder="Enter your email"
+                        >
+                    </div>
+
+                    <button class="save-route-button" type="submit">
+                        Save Changes
+                    </button>
+
+                    <p id="settings-message" class="settings-message"
+                        aria-live="polite"></p>
+
+                </form>
+
+            </section>
+
+        </div>
+    </main>
+
+     <footer>
+        <p>&copy; 2026 Girls Who Code @ UCF - City Improvement Project. All rights reserved.</p>
+     </footer>
+
+    <script src="profile.js"></script>
+
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset = "UTF-8">
-    <meta name ="viewport" content = "width = device-width, initial-scale = 1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City Improvement App</title>
 
     <!-- leaflet styles -->
@@ -44,8 +44,26 @@
                 <img src="assets/images/user-circle-svgrepo-com.svg" alt="User profile icon" class="profile-button">
             </a>
         </nav>
-
      </header>
+
+    <!-- bottom nav for mobile -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+        <a class="is-current" href="index.html" aria-current="page">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/></svg>
+            <span>Explore</span>
+        </a>
+        <a href="contact.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v12H9l-5 4z"/><path d="M8 9h8M8 13h5"/></svg>
+            <span>Contact</span>
+        </a>
+        <a href="profile.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+
+
 
      <!-- main home content -->
      <main class="main-content">
@@ -55,12 +73,12 @@
 
             <div class="search-heading">
                 <h2 id="search-heading">
-                    Select a route to begin
+                    Find a more welcoming route
                 </h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.</p>
+                <p>Enter two places to explore a route and see ideas for making the walk safer and greener!</p>
             </div>
 
-            <!-- search bar PLACEHOLDER -->
+            <!-- route details and placeholder search bar -->
              <form class="route-form" id="route-form">
                 <div class="form-field">
                     <label for="start-location">Starting point</label>
@@ -69,6 +87,8 @@
                         id="start-location"
                         name="start-location"
                         placeholder="Enter starting location"
+                        autocomplete="street-address"
+                        required
                     >
                 </div>
 
@@ -79,7 +99,9 @@
                         id="end-location"
                         name="end-location"
                         placeholder="Enter destination"
-            >
+                        autocomplete="street-address"
+                        required
+                    >
                 </div>
 
                 <button class="analyze-button" type="submit">
@@ -89,17 +111,21 @@
             </form>
         </section>
 
-        <!-- home - map -->
-        <section class="map-section" aria-labelledby="map-heading">
+
+        <!--map -->
+        <section class="map-section" aria-label="City map and project information">
                 <div id="map" aria-label="Interactive map of your city"></div>
+                <!-- if possible can we get a map of ucf here instead? -->
 
             <aside class="route-overview">
-                    <h2>Route overview</h2>
-
-                    <div class="empty-state">
-                        <h3>Ready to explore?</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.</p>
-                    </div>
+                <h2>About City Improvement App Name</h2>
+                <p>
+                    City Improvement is an AI-powered app concept for finding ways to make everyday routes safer and more welcoming for pedestrians.
+                </p>
+                <p>
+                    Created by Girls Who Code @ UCF - Group 14, this project explores how street and neighborhood improvements can support the quality of life in our cities!
+                </p>
+                <a class="about-contact-button" href="contact.html">Contact</a>
             </aside>
         </section>
      </main>
@@ -109,6 +135,7 @@
      </footer>
 
     <!-- js -->
+    <script src="home.js"></script>
     <script type="module" src="script.js"></script>
 </body>
 </html>
