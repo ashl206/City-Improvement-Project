@@ -1,4 +1,4 @@
-// Analysis page route and saved-route behavior.
+// analysis page route and saved-route behavior
 
 const requestStorageKey = "pendingRouteRequest";
 const savedRouteStorageKey = "savedRoutes";

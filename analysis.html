@@ -5,8 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City Improvement App</title>
 
+    <!-- leaflet styles -->
+    <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.css"
+        integrity="sha256-P+hWJNlpL+GBSRYC7cdsDbQH91URmpDeOzLp7DbFRtE="
+        crossorigin="">
+
     <!-- site style -->
     <link rel="stylesheet" href = "style.css">
+
+    <!-- leaflet map import -->
+    <script type="importmap">
+        {
+            "imports": {
+                "leaflet": "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.js"
+
+            },
+            "integrity": {
+                "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.js": "sha256-gj5JhNAaMi6LCs+jVFOk8sXDe1sWSS2Zlc87m+trLiQ="
+            }
+
+        }
+    </script>
 </head>
 <body>
      <!-- app header & nav -->
@@ -166,5 +185,6 @@
 
     <!-- js -->
     <script src="analysis.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
