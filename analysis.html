@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Improvement App</title>
+
+    <!-- leaflet styles -->
+    <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.css"
+        integrity="sha256-P+hWJNlpL+GBSRYC7cdsDbQH91URmpDeOzLp7DbFRtE="
+        crossorigin="">
+
+    <!-- site style -->
+    <link rel="stylesheet" href = "style.css">
+
+    <!-- leaflet map import -->
+    <script type="importmap">
+        {
+            "imports": {
+                "leaflet": "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.js"
+
+            },
+            "integrity": {
+                "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.js": "sha256-gj5JhNAaMi6LCs+jVFOk8sXDe1sWSS2Zlc87m+trLiQ="
+            }
+
+        }
+    </script>
+</head>
+<body>
+     <!-- app header & nav -->
+     <header class="app-header">
+            <a class="app-logo" href="index.html" aria-label="City Improvement home">
+                City Improvement App
+            </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a class="nav-active-link" href="index.html">Explore</a>
+            <a href="contact.html">Contact</a>
+            <a href="profile.html">
+                <img src="assets/images/user-circle-svgrepo-com.svg" alt="User profile icon" class="profile-button">
+            </a>
+        </nav>
+
+     </header>
+
+    <!-- bottom nav for mobile -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+        <a class="is-current" href="index.html" aria-current="page">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/></svg>
+            <span>Explore</span>
+        </a>
+        <a href="contact.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v12H9l-5 4z"/><path d="M8 9h8M8 13h5"/></svg>
+            <span>Contact</span>
+        </a>
+        <a href="profile.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+
+
+     <!-- main analysis content -->
+    <main class="analysis-page">
+
+        <!-- route search -->
+        <section class="analysis-search-section">
+            <h1>Select a route to analyze</h1>
+            <p>
+                Explore a route and discover ways to improve
+                your surrounding community.
+            </p>
+
+            <form id="analysis-search-form" class="analysis-search-form">
+                <label class="visually-hidden" for="analysis-route-input">
+                    Starting point
+                </label>
+
+                <input
+                    type="text"
+                    id="analysis-route-input"
+                    name="origin"
+                    placeholder="Starting point"
+                    autocomplete="street-address"
+                    required
+                >
+
+                <label class="visually-hidden" for="analysis-destination-input">
+                    Destination
+                </label>
+
+                <input
+                    type="text"
+                    id="analysis-destination-input"
+                    name="destination"
+                    placeholder="Destination"
+                    autocomplete="street-address"
+                    required
+                >
+
+                <button type="submit" class="analysis-button">
+                    Analyze Route
+                </button>
+            </form>
+        </section>
+
+
+        <!-- route title from search -->
+        <section class="analysis-heading">
+            <div>
+                <h2 id="analysis-route-title"></h2>
+            </div>
+
+            <button
+                type="button"
+                id="save-analysis-route"
+                class="save-analysis-button"
+                disabled
+            >
+                <span aria-hidden="true">♡</span> Save Route
+            </button>
+        </section>
+
+
+        <!-- map and results -->
+        <section class="analysis-main-grid">
+
+            <div class="analysis-map-card">
+                <div id="analysis-map" class="analysis-map"></div>
+                <!-- map of starting point to destination w icons!!! -->
+            </div>
+
+
+            <aside class="analysis-results-card">
+                <h2>✎ Route Analysis</h2>
+
+                <div class="analysis-result-group">
+                    <h3>Route Summary</h3>
+                    <p id="analysis-summary"></p>
+                    <!-- generated text of route summary -->
+                </div>
+
+                <div class="analysis-result-group">
+                    <h3>Recommendations</h3>
+                    <ul id="analysis-recommendations"></ul>
+                    <!-- generated text of recommendations -->
+                </div>
+            </aside>
+
+        </section>
+
+
+        <!-- route comparisons -->
+        <section class="route-comparisons-section">
+            <div class="comparison-heading">
+                <div>
+                    <h2>Route Comparisons</h2>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+
+                <article class="comparison-card">
+                    <h3>Before</h3>
+                    <div id="before-map" class="comparison-map"></div>
+                    <!-- map of the route BEFORE improvements w icons -->
+                </article>
+
+                <article class="comparison-card">
+                    <h3>After</h3>
+                    <div id="after-map" class="comparison-map"></div>
+                    <!-- map of the route AFTER improvements w icons -->
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+     <footer>
+        <p>&copy; 2026 Girls Who Code @ UCF - City Improvement Project. All rights reserved.</p>
+     </footer>
+
+    <!-- js -->
+    <script src="analysis.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
