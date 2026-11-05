@@ -1,0 +1,15 @@
+lat        : 28.3
+lng        : -81.4
+hasSide    : YES
+hasBike    : NO
+hasTree    : UNKNOWN
+hasGreen   : NO
+streetType : STREET
+
+lat        : 28.31
+lng        : -81.39
+hasSide    : NO
+hasBike    : NO
+hasTree    : NO
+hasGreen   : YES
+streetType : STREET
