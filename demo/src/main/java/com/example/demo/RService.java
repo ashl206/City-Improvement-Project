@@ -15,10 +15,12 @@ public class RService {
     private static final int MAX_POINTS = 20;
 
     private final OsmClient osmClient;
+    private final RClient rClient;
     private final Map<String, List<Roads>> cache = new ConcurrentHashMap<>();
 
-    public RService(OsmClient osmClient) {
+    public RService(OsmClient osmClient, RClient rClient) {
         this.osmClient = osmClient;
+        this.rClient = rClient;
     }
 
     public List<Roads> analyze(RRequest request) {
@@ -31,10 +33,13 @@ public class RService {
             return cached;
         }
 
-        List<Areas> points = RouteSampler.sample(
-                request.stLat(), request.stLng(),
-                request.endLat(), request.endLng(),
-                INTERVAL_METERS);
+        List<Areas> path = rClient.getPath(
+                request.stLat(), request.stLng(), request.endLat(), request.endLng());
+
+        List<Areas> points = path.isEmpty()
+                ? RouteSampler.sample(request.stLat(), request.stLng(),
+                        request.endLat(), request.endLng(), INTERVAL_METERS) // fallback: straight line
+                : RouteSampler.sampleAlong(path, INTERVAL_METERS);
 
         if (points.size() > MAX_POINTS) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
