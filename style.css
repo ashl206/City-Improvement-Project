@@ -66,6 +66,12 @@ html, body {
         color: var(--color-primary);
     }
 
+    .brand-logo {
+        display: block;
+        width: auto;
+        height: 64px;
+    }
+
 
 
 /* navigation */
