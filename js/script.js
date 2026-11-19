@@ -1,5 +1,5 @@
 // // leaflet import info and setup
-import {LeafletMap, TileLayer, Marker, Circle, Polygon, Icon, Polyline} from 'leaflet';
+import { LeafletMap, TileLayer, Marker, Circle, Polygon, Icon, Polyline } from 'leaflet';
 
 
 // shared map setup for the analysis page!!!
@@ -10,16 +10,14 @@ function createMap(containerId, center, zoom) {
     if (!container) return null;
     const map = new LeafletMap(containerId).setView(center, zoom);
 
-        // openstreetmap tile layer
-        new TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-    
+    // openstreetmap tile layer
+    new TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
     return map;
 }
-
-
 
 // Calling OpenStreetMaps API 
 async function getCoordinates(address) {
@@ -68,77 +66,87 @@ async function addAddressMarker(map, address) {
     }
 }
 
-
-
-
 // HOME MAP SETUP
 // - basically the original code just changed var to const
 
-    /* im assuming that the homepage map will be like a demo map for display? maybe change the location to UCF coords? the analysis page maps will be the changing ones!! this one is like just for show, so its unchanging. currently it has the london coords */
+/* im assuming that the homepage map will be like a demo map for display? maybe change the location to UCF coords? the analysis page maps will be the changing ones!! this one is like just for show, so its unchanging. currently it has the london coords */
 
 const homeMap = createMap('map', [51.505, -0.09], 13);
-    if (homeMap) {
+if (homeMap) {
 
-        // icons for maps!!! - changed 'map' to 'homeMap'
-        const marker = new Marker([51.5, -0.09]).addTo(homeMap);
-    
-        const circle = new Circle([51.508, -0.11], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 500
-        }).addTo(homeMap);
+    // icons for maps!!! - changed 'map' to 'homeMap'
+    const marker = new Marker([51.5, -0.09]).addTo(homeMap);
 
-        const polygon = new Polygon([
-            [51.509, -0.08],
-            [51.503, -0.06],
-            [51.51, -0.047]
-        ]).addTo(homeMap);
+    const circle = new Circle([51.508, -0.11], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 500
+    }).addTo(homeMap);
+
+    const polygon = new Polygon([
+        [51.509, -0.08],
+        [51.503, -0.06],
+        [51.51, -0.047]
+    ]).addTo(homeMap);
 
 
-        // Shadow anchor and shadow size not necessary for shadowUrl being null 
-        const treeIcon = new Icon({
-            iconUrl: 'tree_icon.png',
-            shadowUrl: null,
+    // Shadow anchor and shadow size not necessary for shadowUrl being null 
+    const treeIcon = new Icon({
+        iconUrl: 'tree.png',
+        shadowUrl: null,
 
-            iconSize:     [88, 95], // size of the icon
-            // shadowSize:   [50, 64], // size of the shadow
-            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-            // shadowAnchor: [4, 62],  // the same for the shadow
-            popupAnchor:  [-3, -76]
+        iconSize: [88, 95], // size of the icon
+        // shadowSize:   [50, 64], // size of the shadow
+        iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+        // shadowAnchor: [4, 62],  // the same for the shadow
+        popupAnchor: [-3, -76]
 
-        })
+    })
 
-        const treeMarker = new Marker([51.52, -0.10], {
-            icon: treeIcon
-        }).addTo(homeMap);
+    const treeMarker = new Marker([51.52, -0.10], {
+        icon: treeIcon
+    }).addTo(homeMap);
 
-        const flowerIcon = new Icon({
-            iconUrl: 'flower_icon.jpg',
-            shadowUrl: null,
+    const flowerIcon = new Icon({
+        iconUrl: 'sunflower.png',
+        shadowUrl: null,
 
-            iconSize: [78, 95],
-            iconAnchor: [22, 94],
-            popupAnchor: [-3, -76]
-        })
+        iconSize: [78, 95],
+        iconAnchor: [22, 94],
+        popupAnchor: [-3, -76]
+    })
 
-        const flowerMarker = new Marker([51.515, -0.08], {
-            icon: flowerIcon
-        }).addTo(homeMap);
+    const flowerMarker = new Marker([51.515, -0.08], {
+        icon: flowerIcon
+    }).addTo(homeMap);
 
-        const raisedMedianIcon = new Icon({
-            iconUrl: 'median_icon.webp',
-            shadowUrl: null, 
+    const raisedMedianIcon = new Icon({
+        iconUrl: 'footprint.png',
+        shadowUrl: null,
 
-            iconSize: [88, 95],
-            iconAnchor: [22, 94],
-            popupAnchor: [-3, -76]
-        })
+        iconSize: [88, 95],
+        iconAnchor: [22, 94],
+        popupAnchor: [-3, -76]
+    })
 
-        const raisedMedianIconMarker = new Marker([51.525, -0.11], {
-            icon: raisedMedianIcon
-        }).addTo(homeMap);
-    }
+    const raisedMedianIconMarker = new Marker([51.525, -0.11], {
+        icon: raisedMedianIcon
+    }).addTo(homeMap);
+
+    const bike = new Icon({
+        iconUrl: '/footprint.png',
+        shadowUrl: null,
+
+        iconSize: [88, 95],
+        iconAnchor: [22, 94],
+        popupAnchor: [-3, -76]
+    })
+
+    const bikeMarker = new Marker([51.525, -0.11], {
+        icon: bike
+    }).addTo(homeMap);
+}
 
 
 
@@ -181,6 +189,38 @@ function addMapLayer(map, layers, layer) {
 
     layer.addTo(map);
     layers.push(layer);
+}
+
+// icon per improvement type (same files and sizes as your existing icons)
+const improvementIcons = {
+    NEEDS_TREES:     { url: '/tree.png',   size: [50, 60], label: 'Add trees here' },
+    NEEDS_SIDEWALK:  { url: '/footprint.png', size: [50, 60], label: 'Add a sidewalk here' },
+    NEEDS_BIKE_LANE: { url: '/bicycle-rider.png',  size: [50, 60], label: 'Add a bike lane here' }
+};
+
+// draws the backend's real results on the "after" map
+export function showSegments(segments) {
+    if (!afterMap || !Array.isArray(segments)) return;
+
+    segments.forEach(seg => {
+        (seg.improvements || []).forEach((type, i) => {
+            const cfg = improvementIcons[type];
+            if (!cfg) return;
+
+            const icon = new Icon({
+                iconUrl: cfg.url,
+                shadowUrl: null,
+                iconSize: cfg.size,
+                iconAnchor: [22, 94],
+                popupAnchor: [-3, -76]
+            });
+
+            // nudge a second or third icon at the same point so they don't stack
+            const marker = new Marker([seg.lat, seg.lng + i * 0.0001], { icon })
+                .bindPopup(cfg.label);
+            addMapLayer(afterMap, mapLayers.after, marker);
+        });
+    });
 }
 
 // function used by analysis.js to display the searched route
@@ -254,7 +294,7 @@ export async function displayAddressRoute(origin, destination) {
             weight: 4,
             opacity: 0.8
         }).addTo(beforeMap);
-
+/*
         // circle icon to show issue location
         new Circle(midpoint, {
             color: 'red',
@@ -262,7 +302,8 @@ export async function displayAddressRoute(origin, destination) {
             fillOpacity: 0.5,
             radius: 50
         }).addTo(beforeMap);
-        
+*/
+
         // shows the start and end markers
         new Marker(startCoordinates).addTo(beforeMap);
         new Marker(endCoordinates).addTo(beforeMap);
@@ -279,47 +320,45 @@ export async function displayAddressRoute(origin, destination) {
 
         // tree icon
         const treeIcon = new Icon({
-            iconUrl: 'tree_icon.png',
+            iconUrl: '/tree_icon.png',
             shadowUrl: null,
             iconSize: [88, 95],
             iconAnchor: [22, 94],
             popupAnchor: [-3, -76]
         });
-            const treeMarker = new Marker(getPointAlongRoute(0.3), {
-                icon: treeIcon
-            }).addTo(afterMap);
 
         //  flower icon
         const flowerIcon = new Icon({
-            iconUrl: 'flower_icon.jpg',
+            iconUrl: '/sunflower.png',
             shadowUrl: null,
             iconSize: [78, 95],
             iconAnchor: [22, 94],
             popupAnchor: [-3, -76]
         });
 
-            const flowerMarker = new Marker(getPointAlongRoute(0.5), {
-                icon: flowerIcon
-            }).addTo(afterMap);
-
         // raised median icon
         const raisedMedianIcon = new Icon({
-            iconUrl: 'median_icon.webp',
+            iconUrl: '/footprint.png',
             shadowUrl: null,
             iconSize: [88, 95],
             iconAnchor: [22, 94],
             popupAnchor: [-3, -76]
         });
 
-            const raisedMedianIconMarker = new Marker(getPointAlongRoute(0.7), {
-                icon: raisedMedianIcon
-            }).addTo(afterMap);
-                
+        // raised median icon
+        const bike = new Icon({
+            iconUrl: '/bicycle-rider.png',
+            shadowUrl: null,
+            iconSize: [88, 95],
+            iconAnchor: [22, 94],
+            popupAnchor: [-3, -76]
+        });
+
         // shows the start and end markers
         new Marker(startCoordinates).addTo(afterMap);
         new Marker(endCoordinates).addTo(afterMap);
     }
-    
+
 
     // zoom all maps to fit the route
     const maps = [analysisMap, beforeMap, afterMap];

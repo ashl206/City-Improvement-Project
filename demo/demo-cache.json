@@ -1,0 +1,409 @@
+{
+  "25.77994,-80.19614,25.77866,-80.18476" : [ {
+    "lat" : 25.779935,
+    "lng" : -80.19614,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : {
+      "hasSide" : "YES",
+      "hasBike" : "NO",
+      "hasTree" : "YES",
+      "hasGreen" : "NO"
+    },
+    "improvements" : [ "NEEDS_BIKE_LANE" ]
+  }, {
+    "lat" : 25.77991644438178,
+    "lng" : -80.19131916384927,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : {
+      "hasSide" : "YES",
+      "hasBike" : "NO",
+      "hasTree" : "YES",
+      "hasGreen" : "YES"
+    },
+    "improvements" : [ "NEEDS_BIKE_LANE" ]
+  }, {
+    "lat" : 25.77826976943031,
+    "lng" : -80.18796465895986,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "YES",
+    "streetType" : "STREET",
+    "ai" : {
+      "hasSide" : "YES",
+      "hasBike" : "NO",
+      "hasTree" : "YES",
+      "hasGreen" : "YES"
+    },
+    "improvements" : [ "NEEDS_BIKE_LANE" ]
+  }, {
+    "lat" : 25.77806308374815,
+    "lng" : -80.18423899172404,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : null,
+    "improvements" : [ ]
+  } ],
+  "28.58756,-81.20925,28.61339,-81.20621" : [ {
+    "lat" : 28.587587,
+    "lng" : -81.209009,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : null,
+    "improvements" : [ ]
+  }, {
+    "lat" : 28.591440149678064,
+    "lng" : -81.2088628077703,
+    "hasSide" : "YES",
+    "hasBike" : "NO",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "YES",
+    "streetType" : "STREET",
+    "ai" : null,
+    "improvements" : [ "NEEDS_BIKE_LANE" ]
+  }, {
+    "lat" : 28.595741873887047,
+    "lng" : -81.2075587184372,
+    "hasSide" : "YES",
+    "hasBike" : "NO",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : {
+      "hasSide" : "UNKNOWN",
+      "hasBike" : "UNKNOWN",
+      "hasTree" : "YES",
+      "hasGreen" : "UNKNOWN"
+    },
+    "improvements" : [ "NEEDS_BIKE_LANE" ]
+  }, {
+    "lat" : 28.600199512614914,
+    "lng" : -81.20753641847675,
+    "hasSide" : "YES",
+    "hasBike" : "NO",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : null,
+    "improvements" : [ "NEEDS_BIKE_LANE" ]
+  }, {
+    "lat" : 28.60468734617939,
+    "lng" : -81.20743980752164,
+    "hasSide" : "YES",
+    "hasBike" : "NO",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "YES",
+    "streetType" : "STREET",
+    "ai" : {
+      "hasSide" : "UNKNOWN",
+      "hasBike" : "UNKNOWN",
+      "hasTree" : "YES",
+      "hasGreen" : "YES"
+    },
+    "improvements" : [ "NEEDS_BIKE_LANE" ]
+  }, {
+    "lat" : 28.609161947270017,
+    "lng" : -81.2074145705155,
+    "hasSide" : "YES",
+    "hasBike" : "NO",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : {
+      "hasSide" : "UNKNOWN",
+      "hasBike" : "UNKNOWN",
+      "hasTree" : "YES",
+      "hasGreen" : "UNKNOWN"
+    },
+    "improvements" : [ "NEEDS_BIKE_LANE" ]
+  }, {
+    "lat" : 28.61276997436791,
+    "lng" : -81.20648358310952,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : null,
+    "improvements" : [ ]
+  } ],
+  "28.42708,-81.46661,28.44316,-81.46861" : [ {
+    "lat" : 28.42723,
+    "lng" : -81.4667,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "PED",
+    "ai" : null,
+    "improvements" : [ ]
+  }, {
+    "lat" : 28.42939713770805,
+    "lng" : -81.46984200808686,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : null,
+    "improvements" : [ ]
+  }, {
+    "lat" : 28.433364855047287,
+    "lng" : -81.47157071311466,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : {
+      "hasSide" : "YES",
+      "hasBike" : "NO",
+      "hasTree" : "YES",
+      "hasGreen" : "YES"
+    },
+    "improvements" : [ "NEEDS_BIKE_LANE" ]
+  }, {
+    "lat" : 28.437741416123263,
+    "lng" : -81.47182407072182,
+    "hasSide" : "NO",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : null,
+    "improvements" : [ "NEEDS_SIDEWALK" ]
+  }, {
+    "lat" : 28.441925540271665,
+    "lng" : -81.470133,
+    "hasSide" : "NO",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : null,
+    "improvements" : [ "NEEDS_SIDEWALK" ]
+  }, {
+    "lat" : 28.443145,
+    "lng" : -81.468889,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "YES",
+    "hasGreen" : "YES",
+    "streetType" : "PED",
+    "ai" : null,
+    "improvements" : [ ]
+  } ],
+  "28.30430,-81.40432,28.30457,-81.40057" : [ {
+    "lat" : 28.3043,
+    "lng" : -81.404371,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : null,
+    "improvements" : [ ]
+  }, {
+    "lat" : 28.304562,
+    "lng" : -81.400567,
+    "hasSide" : "YES",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : {
+      "hasSide" : "YES",
+      "hasBike" : "NO",
+      "hasTree" : "YES",
+      "hasGreen" : "YES"
+    },
+    "improvements" : [ "NEEDS_BIKE_LANE" ]
+  } ],
+  "28.30430,-81.40432,28.30457,-81.40056" : [ {
+    "lat" : 28.3043,
+    "lng" : -81.404371,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : {
+      "hasSide" : "YES",
+      "hasBike" : "NO",
+      "hasTree" : "YES",
+      "hasGreen" : "YES"
+    },
+    "improvements" : [ "NEEDS_BIKE_LANE" ]
+  }, {
+    "lat" : 28.304562,
+    "lng" : -81.400563,
+    "hasSide" : "YES",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : {
+      "hasSide" : "UNKNOWN",
+      "hasBike" : "UNKNOWN",
+      "hasTree" : "YES",
+      "hasGreen" : "UNKNOWN"
+    },
+    "improvements" : [ ]
+  } ],
+  "28.37035,-81.52211,28.37222,-81.51084" : [ {
+    "lat" : 28.3706,
+    "lng" : -81.521988,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "YES",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "PED",
+    "ai" : {
+      "hasSide" : "YES",
+      "hasBike" : "NO",
+      "hasTree" : "YES",
+      "hasGreen" : "NO"
+    },
+    "improvements" : [ ]
+  }, {
+    "lat" : 28.370968754449528,
+    "lng" : -81.5176588420466,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "YES",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "PED",
+    "ai" : {
+      "hasSide" : "YES",
+      "hasBike" : "NO",
+      "hasTree" : "YES",
+      "hasGreen" : "YES"
+    },
+    "improvements" : [ ]
+  }, {
+    "lat" : 28.372968789430477,
+    "lng" : -81.51410098533403,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "YES",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : {
+      "hasSide" : "YES",
+      "hasBike" : "NO",
+      "hasTree" : "YES",
+      "hasGreen" : "YES"
+    },
+    "improvements" : [ "NEEDS_BIKE_LANE" ]
+  }, {
+    "lat" : 28.372911849075255,
+    "lng" : -81.51133358495696,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "YES",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : null,
+    "improvements" : [ ]
+  }, {
+    "lat" : 28.371867,
+    "lng" : -81.51064,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : null,
+    "improvements" : [ ]
+  } ],
+  "25.77977,-80.20161,25.77866,-80.18476" : [ {
+    "lat" : 25.779758,
+    "lng" : -80.201604,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : {
+      "hasSide" : "YES",
+      "hasBike" : "NO",
+      "hasTree" : "YES",
+      "hasGreen" : "YES"
+    },
+    "improvements" : [ "NEEDS_BIKE_LANE" ]
+  }, {
+    "lat" : 25.7799232577112,
+    "lng" : -80.1967334482564,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "YES",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : {
+      "hasSide" : "YES",
+      "hasBike" : "NO",
+      "hasTree" : "YES",
+      "hasGreen" : "YES"
+    },
+    "improvements" : [ ]
+  }, {
+    "lat" : 25.779932044462477,
+    "lng" : -80.19191165319019,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "YES",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : null,
+    "improvements" : [ ]
+  }, {
+    "lat" : 25.778233363108487,
+    "lng" : -80.18843498889827,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : {
+      "hasSide" : "YES",
+      "hasBike" : "NO",
+      "hasTree" : "YES",
+      "hasGreen" : "NO"
+    },
+    "improvements" : [ "NEEDS_BIKE_LANE" ]
+  }, {
+    "lat" : 25.777733476427066,
+    "lng" : -80.184603206377,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "PED",
+    "ai" : null,
+    "improvements" : [ ]
+  }, {
+    "lat" : 25.778372,
+    "lng" : -80.184076,
+    "hasSide" : "UNKNOWN",
+    "hasBike" : "UNKNOWN",
+    "hasTree" : "UNKNOWN",
+    "hasGreen" : "UNKNOWN",
+    "streetType" : "STREET",
+    "ai" : null,
+    "improvements" : [ ]
+  } ]
+}

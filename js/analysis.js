@@ -1,7 +1,7 @@
 // analysis page route and saved-route behavior
 
 // import the map function from script.js
-import { displayAddressRoute } from "./script.js";
+import { displayAddressRoute, showSegments } from "./script.js";
 
 
 // storage keys
@@ -48,6 +48,34 @@ function updateRoute(routeRequest) {
         '<span aria-hidden="true">♡</span> Save Route';
 }
 
+const recommendationList = document.getElementById("analysis-recommendations");
+
+const advice = {
+    NEEDS_SIDEWALK: "Add a sidewalk",
+    NEEDS_BIKE_LANE: "Add a bike lane",
+    NEEDS_TREES: "Plant trees"
+};
+
+function showAnalysis(segments) {
+    // count how many points flagged each improvement
+    const counts = {};
+    segments.forEach(seg =>
+        (seg.improvements || []).forEach(type => {
+            counts[type] = (counts[type] || 0) + 1;
+        })
+    );
+
+    const lines = Object.entries(counts).map(
+        ([type, n]) => `${advice[type]} near ${n} of ${segments.length} points`
+    );
+
+    if (!lines.length) lines.push("No improvements suggested");
+
+    analysisSummary.textContent =
+        `Checked ${segments.length} points and found ${Object.keys(counts).length} kinds of improvements.`;
+    recommendationList.innerHTML = lines.map(l => `<li>${l}</li>`).join("");
+}
+
 //Ashley: Changed this a little bit to connect with my backend
 // analyze the route
 async function runAnalysis(routeRequest) {
@@ -86,6 +114,8 @@ async function runAnalysis(routeRequest) {
 
         const segments = await res.json();
         console.log("Segments:", segments);
+        showSegments(segments);
+        showAnalysis(segments);  
 
         //To reduce overwork, sections are analyzed per 500m and are limited to 20 sections (10km max)
         analysisSummary.textContent =
@@ -93,7 +123,7 @@ async function runAnalysis(routeRequest) {
 
         saveRouteButton.disabled = false;
 
-    //more flashy error handling
+        //more flashy error handling
     } catch (error) {
         console.error("Route analysis error:", error);
         analysisSummary.textContent = error.message;
@@ -105,114 +135,114 @@ async function runAnalysis(routeRequest) {
 
 const pendingRequest = readPendingRequest();
 
-    const validPendingRequest = pendingRequest &&
-        typeof pendingRequest.origin === "string" &&
-        typeof pendingRequest.destination === "string";
+const validPendingRequest = pendingRequest &&
+    typeof pendingRequest.origin === "string" &&
+    typeof pendingRequest.destination === "string";
 
-    if (validPendingRequest) {
+if (validPendingRequest) {
 
-        runAnalysis(pendingRequest);
+    runAnalysis(pendingRequest);
+
+}
+
+
+// search for a new route
+
+searchForm.addEventListener("submit", async event => {
+
+    event.preventDefault();
+
+    const routeRequest = {
+        origin: routeInput.value.trim(),
+        destination: destinationInput.value.trim(),
+        requestedAt: new Date().toISOString()
+
+    };
+
+    if (!routeRequest.origin || !routeRequest.destination) {
+        return;
+    }
+
+    // save the search temporarily
+    try {
+        sessionStorage.setItem(
+            requestStorageKey,
+            JSON.stringify(routeRequest)
+        );
+
+    } catch {
+        console.error("Could not save the pending route.");
+    }
+
+    // start the analysis
+    await runAnalysis(routeRequest);
+
+});
+
+
+// save route
+saveRouteButton.addEventListener("click", () => {
+
+    const routeRequest = {
+        origin: routeInput.value.trim(),
+        destination: destinationInput.value.trim()
+
+    };
+
+
+    let savedRoutes = [];
+
+    try {
+        savedRoutes = JSON.parse(
+            localStorage.getItem(savedRouteStorageKey)
+        ) || [];
+
+        if (!Array.isArray(savedRoutes)) {
+            savedRoutes = [];
+        }
+
+    } catch {
+        alert("Could not read saved routes in this browser. Please try again.");
+        return;
 
     }
 
 
-    // search for a new route
+    // check whether the route was already saved
+    const alreadySaved = savedRoutes.some(route =>
 
-    searchForm.addEventListener("submit", async event => {
+        route &&
+        route.origin === routeRequest.origin &&
+        route.destination === routeRequest.destination
 
-        event.preventDefault();
+    );
 
-        const routeRequest = {
-            origin: routeInput.value.trim(),
-            destination: destinationInput.value.trim(),
-            requestedAt: new Date().toISOString()
+    if (!alreadySaved) {
+        savedRoutes.push({
+            id: Date.now(),
+            title: `${routeRequest.origin} to ${routeRequest.destination}`,
+            address: `${routeRequest.origin} → ${routeRequest.destination}`,
+            origin: routeRequest.origin,
+            destination: routeRequest.destination,
+            date: new Date().toLocaleDateString()
+        });
 
-        };
 
-        if (!routeRequest.origin || !routeRequest.destination) {
-            return;
-        }
-
-        // save the search temporarily
         try {
-            sessionStorage.setItem(
-                requestStorageKey,
-                JSON.stringify(routeRequest)
+            localStorage.setItem(
+                savedRouteStorageKey,
+                JSON.stringify(savedRoutes)
             );
 
         } catch {
-            console.error("Could not save the pending route.");
-        }
-
-        // start the analysis
-        await runAnalysis(routeRequest);
-
-    });
-
-
-    // save route
-    saveRouteButton.addEventListener("click", () => {
-
-        const routeRequest = {
-            origin: routeInput.value.trim(),
-            destination: destinationInput.value.trim()
-
-        };
-
-
-        let savedRoutes = [];
-
-        try {
-            savedRoutes = JSON.parse(
-                localStorage.getItem(savedRouteStorageKey)
-            ) || [];
-
-            if (!Array.isArray(savedRoutes)) {
-                savedRoutes = [];
-            }
-
-        } catch {
-            alert("Could not read saved routes in this browser. Please try again.");
+            alert("Could not save this route in this browser. Please try again.");
             return;
-
         }
 
+    }
 
-        // check whether the route was already saved
-        const alreadySaved = savedRoutes.some(route =>
+    saveRouteButton.disabled = true;
+    saveRouteButton.innerHTML =
+        '<span aria-hidden="true">✓</span> Route Saved';
 
-            route &&
-            route.origin === routeRequest.origin &&
-            route.destination === routeRequest.destination
-
-        );
-
-        if (!alreadySaved) {
-            savedRoutes.push({
-                id: Date.now(),
-                title: `${routeRequest.origin} to ${routeRequest.destination}`,
-                address: `${routeRequest.origin} → ${routeRequest.destination}`,
-                origin: routeRequest.origin,
-                destination: routeRequest.destination,
-                date: new Date().toLocaleDateString()
-            });
-
-
-            try {
-                localStorage.setItem(
-                    savedRouteStorageKey,
-                    JSON.stringify(savedRoutes)
-                );
-
-            } catch {
-                alert("Could not save this route in this browser. Please try again.");
-                return;
-            }
-
-        }
-
-        saveRouteButton.disabled = true;
-        saveRouteButton.innerHTML =
-            '<span aria-hidden="true">✓</span> Route Saved';
-
-    });
+});
